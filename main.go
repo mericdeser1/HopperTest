@@ -54,6 +54,7 @@ func main() {
 		obstacles := 0
 		fmt.Sscanf(scanner.Text(), "%d", &obstacles)
 
+		// Mark obstacles on the grid
 		for i := 0; i < obstacles; i++ {
 			if !scanner.Scan() {
 				fmt.Println("Error reading obstacle.")
@@ -66,6 +67,8 @@ func main() {
 
 		start := Point{startX, startY}
 		finish := Point{finishX, finishY}
+
+		// Find the minimum hops from start to finish
 		result := findMinimumHops(start, finish, width, height, grid)
 
 		if result == -1 {

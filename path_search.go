@@ -10,6 +10,8 @@ type State struct {
 	hops     int
 }
 
+// findMinimumHops returns the minimum number of hops required to reach finish point.
+// It returns the number of hops or -1 if no valid path exists.
 func findMinimumHops(start, finish Point, width, height int, grid [][]bool) int {
 	directions := []int{-1, 0, 1}
 
@@ -22,6 +24,7 @@ func findMinimumHops(start, finish Point, width, height int, grid [][]bool) int 
 	}
 	visited[start][Point{0, 0}] = true
 
+	//For loop to iterate all possible paths to reach finish point
 	for len(queue) > 0 {
 		current := queue[0]
 		queue = queue[1:]
@@ -52,6 +55,7 @@ func findMinimumHops(start, finish Point, width, height int, grid [][]bool) int 
 	return -1 //If there is no solution
 }
 
+// isValidMove checks if the move is within bounds and not blocked by obstacles.
 func isValidMove(x, y, width, height int, grid [][]bool) bool {
 	return x >= 0 && x < width && y >= 0 && y < height && !grid[x][y]
 }
