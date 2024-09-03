@@ -1,0 +1,5 @@
+Optimal solution takes 7 hops.
+No solution.
+Optimal solution takes 3 hops.
+Optimal solution takes 4 hops.
+Optimal solution takes 3 hops.
